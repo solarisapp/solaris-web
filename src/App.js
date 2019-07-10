@@ -13,7 +13,7 @@ import { FormClose, Notification } from 'grommet-icons';
 const theme = {
   global: {
     colors: {
-      brand: '#228BE6',
+      brand: '#FFFFFF',
     },
     font: {
       family: 'Roboto',
@@ -31,7 +31,6 @@ const AppHeader = (props) => (
     justify='between'
     background='brand'
     pad={{ left: 'medium', right: 'small', vertical: 'small' }}
-    elevation='medium'
     style={{ zIndex: '1' }}
     {...props}
   />
