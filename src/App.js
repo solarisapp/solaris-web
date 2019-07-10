@@ -69,7 +69,7 @@ const App = (props) => {
                     align='center'
                     justify='center'
                   >
-                    sidebar
+                    Notifications here ...
                   </Box>
                 </Collapsible>
               ): (
@@ -92,7 +92,7 @@ const App = (props) => {
                     align='center'
                     justify='center'
                   >
-                    Notifications here
+                    Notifications here ...
                   </Box>
                 </Layer>
               )}
