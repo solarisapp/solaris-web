@@ -4,7 +4,7 @@ import { Update } from "grommet-icons";
 
 const Hardware = ({ data, ...rest }) => (
   <Box direction="column" gap="large">
-    <Box round pad="medium" direction="column" background="white" {...rest}>
+    <Box round='xsmall' pad="medium" direction="column" background="white" {...rest}>
       <Box gap="small">
         <Heading level="2" margin="none" size="small">
           {data.Hypervisor.name}
@@ -24,7 +24,7 @@ const Hardware = ({ data, ...rest }) => (
       </Box>
     </Box>
     <Box
-      round
+      round='xsmall'
       pad="medium"
       direction="column"
       background="white"

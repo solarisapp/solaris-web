@@ -3,7 +3,7 @@ import { Box, DataTable, Meter, Text, Heading, Button } from 'grommet';
 
 const ReceivablesChart = () => (
   <Box direction="column" gap="large">
-    <Box round pad="medium" direction="column" background="white">
+    <Box pad="medium" direction="column" background="white">
       <Box gap="small">
         <Heading level="5" margin="none" size="small">
           Receivables
