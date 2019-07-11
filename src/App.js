@@ -6,14 +6,17 @@ import {
   Heading,
   Layer,
   ResponsiveContext,
-  Grommet
+  Grommet,
+  Stack,
+  Text
 } from 'grommet';
-import { FormClose, Notification } from 'grommet-icons';
+import { FormClose, Notification, User } from 'grommet-icons';
 
 const theme = {
   global: {
     colors: {
       brand: '#FFFFFF',
+      unreadNotifications: '#0000FF',
     },
     font: {
       family: 'Roboto',
@@ -50,10 +53,20 @@ const App = (props) => {
           <Box fill background="light-3">
             <AppHeader>
               <Heading level='3' margin='none'>My App</Heading>
-              <Button
-                icon={<Notification />}
-                onClick={toggleSidebar}
-              />
+              <Stack anchor="top-right">
+                <Button
+                  icon={<Notification />}
+                  onClick={toggleSidebar}
+                />
+                <Box
+                  background="unreadNotifications"
+                  pad={{ horizontal: 'xsmall' }}
+                  round
+                >
+                  <Text size='xsmall'>1</Text>
+                </Box>
+              </Stack>
+              <Button icon={<User />} />
             </AppHeader>
             <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
               <Box flex align='center' justify='center'>
@@ -68,7 +81,7 @@ const App = (props) => {
                     align='center'
                     justify='center'
                   >
-                    Notifications here ...
+                    Unable to establish connection with the Datalogger 123ABC.
                   </Box>
                 </Collapsible>
               ): (
@@ -91,7 +104,7 @@ const App = (props) => {
                     align='center'
                     justify='center'
                   >
-                    Notifications here ...
+                    Unable to establish connection with the Datalogger 123ABC.
                   </Box>
                 </Layer>
               )}
