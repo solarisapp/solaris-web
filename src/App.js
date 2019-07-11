@@ -31,9 +31,6 @@ const solaris = {
       brand: '#FFFFFF',
       unreadNotifications: '#0000FF',
     },
-    borderSize: {
-      xlarge: "24px"
-    },
     font: {
       family: 'Roboto',
       size: '14px',
@@ -162,7 +159,7 @@ const App = (props) => {
                     <Hardware data={hardware} />
                   </Box>
                 </Box>
-                <Box>
+                <Box flex="grow" margin="medium">
                   <ReceivablesChart />
                 </Box>
                 {(!showSidebar || size !== 'small') ? (
