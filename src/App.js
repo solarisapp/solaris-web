@@ -25,11 +25,14 @@ import VirtualMachinesCard from "./components/VirtualMachinesCard";
 
 import { hardware, utilization, vms, notification } from "./data";
 
-const theme = {
+const solaris = {
   global: {
     colors: {
       brand: '#FFFFFF',
       unreadNotifications: '#0000FF',
+    },
+    borderSize: {
+      xlarge: "24px"
     },
     font: {
       family: 'Roboto',
@@ -47,7 +50,7 @@ const App = (props) => {
   }
 
   return (
-    <Grommet theme={theme} full>
+    <Grommet theme={solaris} full>
       <ResponsiveContext.Consumer>
         {size => (
           <Box fill background='light-3'>
