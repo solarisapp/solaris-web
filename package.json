@@ -1,7 +1,11 @@
 {
-  "name": "groomet",
+  "name": "solaris",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.9.0",
+    "node": "10.16.0"
+  },
   "dependencies": {
     "grommet": "^2.7.3",
     "grommet-icons": "^4.2.0",
