@@ -8,9 +8,11 @@ import {
   ResponsiveContext,
   Grommet,
   Stack,
-  Text
+  Text,
+  TextInput,
+  Menu
 } from 'grommet';
-import { FormClose, Notification, User } from 'grommet-icons';
+import { FormClose, Notification, User, FormSearch, Trigger } from 'grommet-icons';
 
 const theme = {
   global: {
@@ -52,21 +54,58 @@ const App = (props) => {
         {size => (
           <Box fill background="light-3">
             <AppHeader>
-              <Heading level='3' margin='none'>My App</Heading>
-              <Stack anchor="top-right">
-                <Button
-                  icon={<Notification />}
-                  onClick={toggleSidebar}
-                />
-                <Box
-                  background="unreadNotifications"
-                  pad={{ horizontal: 'xsmall' }}
-                  round
-                >
-                  <Text size='xsmall'>1</Text>
+              <Box direction='row' align='center'>
+                <Trigger color='red' size='large'/>
+                <Box>
+                  <Menu
+                    label="Billing & Paymnet"
+                    items={[
+                      { label: 'First Action', onClick: () => {} },
+                      { label: 'Second Action', onClick: () => {} },
+                    ]}
+                  />
                 </Box>
-              </Stack>
-              <Button icon={<User />} />
+                <Box>
+                  <Menu
+                    label="Sites"
+                    items={[
+                      { label: 'Site List', onClick: () => {} },
+                      { label: 'Add A Site', onClick: () => {} },
+                    ]}
+                  />
+                </Box>
+              </Box>
+              <Box direction="row" align="center">
+                <Box
+                  margin={{ left: "medium" }}
+                  round="xsmall"
+                  background={{ color: "white", opacity: "weak" }}
+                  direction="row"
+                  align="center"
+                  pad={{ horizontal: "small" }}
+                  border='all'
+                >
+                  <FormSearch color="gray" />
+                  <TextInput plain placeholder="Search" type="search" />
+                </Box>
+                <Stack anchor="top-right">
+                  <Button
+                    icon={<Notification />}
+                    onClick={toggleSidebar}
+                  />
+                  <Box
+                    background="unreadNotifications"
+                    pad={{ horizontal: 'xsmall' }}
+                    round
+                  >
+                    <Text
+                      size='xsmall'>
+                      1
+                    </Text>
+                  </Box>
+                </Stack>
+                <Button icon={<User />} />
+              </Box>
             </AppHeader>
             <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
               <Box flex align='center' justify='center'>
@@ -81,7 +120,7 @@ const App = (props) => {
                     align='center'
                     justify='center'
                   >
-                    Unable to establish connection with the Datalogger 123ABC.
+                    Unable to establish a connection with the Datalogger 123ABC.
                   </Box>
                 </Collapsible>
               ): (
@@ -104,7 +143,7 @@ const App = (props) => {
                     align='center'
                     justify='center'
                   >
-                    Unable to establish connection with the Datalogger 123ABC.
+                    Unable to establish a connection with the Datalogger 123ABC.
                   </Box>
                 </Layer>
               )}
