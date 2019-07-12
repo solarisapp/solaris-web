@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   Box,
   Button,
+  DropButton,
   Collapsible,
   Heading,
   Layer,
@@ -14,7 +15,10 @@ import {
   DataTable,
   Meter
 } from 'grommet';
-import { FormClose, Notification, User, FormSearch, Trigger } from 'grommet-icons';
+import { Down, FormClose, Notification, FormSearch, Trigger } from 'grommet-icons';
+
+import { defaultTheme } from "./themes/defaultTheme";
+import { solarisTheme } from "./themes/solarisTheme";
 
 import AppHeader from "./components/AppHeader";
 import Hardware from "./components/Hardware";
@@ -22,35 +26,39 @@ import NotificationCard from "./components/NotificationCard";
 import UtilizationCard from "./components/UtilizationCard";
 import ReceivablesChart from "./components/ReceivablesChart";
 import VirtualMachinesCard from "./components/VirtualMachinesCard";
+import { UserMenu } from "./components/UserMenu";
 
 import { hardware, utilization, vms, notification } from "./data";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Users } from "./pages";
 
-const solaris = {
-  global: {
-    colors: {
-      brand: '#FFFFFF',
-      unreadNotifications: '#0000FF',
-    },
-    font: {
-      family: 'Roboto',
-      size: '14px',
-      height: '20px',
-    },
-  },
-};
-
-const App = (props) => {
+const App = ({ open }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar)
   }
 
+  const userSession = {
+    user: {
+      name: "Adam Driver",
+      thumbnail: "https://images-na.ssl-images-amazon.com/images/M/MV5BOWViYjUzOWMtMzRkZi00MjNkLTk4M2ItMTVkMDg5MzE2ZDYyXkEyXkFqcGdeQXVyODQwNjM3NDA@._V1_UY256_CR36,0,172,256_AL_.jpg"
+    },
+    items: [
+      {
+        label: "View Profile",
+        href: "#"
+      },
+      {
+        label: "Log Out",
+        href: "#"
+      }
+    ]
+  };
+
   return (
     <Router>
-      <Grommet theme={solaris} full>
+      <Grommet theme={solarisTheme} full>
         <ResponsiveContext.Consumer>
           {size => (
             <Box fill background='light-3'>
@@ -66,7 +74,7 @@ const App = (props) => {
                   <Box>
                     <Menu
                       label='Billing & Paymnet'
-                      disabled='true'
+                      disabled={true}
                       items={[
                         { label: 'First Action', onClick: () => {} },
                         { label: 'Second Action', onClick: () => {} },
@@ -74,14 +82,31 @@ const App = (props) => {
                     />
                   </Box>
                   <Box>
-                    <Menu
-                      label='Sites'
-                      disabled='true'
-                      items={[
-                        { label: 'Site List', onClick: () => {} },
-                        { label: 'Add A Site', onClick: () => {} },
-                      ]}
-                    />
+                    <DropButton
+                      open={open}
+                      onClose={() => {}}
+                      dropContent={
+                        <Box pad="small">
+                          <Text size="medium" margin="small">
+                            All Sites
+                          </Text>
+                          <Text size="medium" margin="small">
+                            Add a Site
+                          </Text>
+                        </Box>
+                      }
+                    >
+                    <Box
+                      pad={{ horizontal: "medium", vertical: "small" }}
+                      responsive={false}
+                      direction="row"
+                      align="center"
+                      gap="small"
+                    >
+                      <Text>Sites</Text>
+                      <Down color="black" size="small" />
+                    </Box>
+                  </DropButton>
                   </Box>
                   <Box>
                     <Button
@@ -92,7 +117,7 @@ const App = (props) => {
                   <Box>
                     <Menu
                       label='Organizations'
-                      disabled='true'
+                      disabled={true}
                       items={[
                         { label: 'First Action', onClick: () => {} },
                         { label: 'Second Action', onClick: () => {} },
@@ -102,7 +127,7 @@ const App = (props) => {
                   <Box>
                     <Menu
                       label='Reports'
-                      disabled='true'
+                      disabled={true}
                       items={[
                         { label: 'First Action', onClick: () => {} },
                         { label: 'Second Action', onClick: () => {} },
@@ -139,7 +164,13 @@ const App = (props) => {
                       </Text>
                     </Box>
                   </Stack>
-                  <Button icon={<User />} />
+                  {userSession && (
+                     <UserMenu
+                       alignSelf="center"
+                       user={userSession.user}
+                       items={userSession.items}
+                     />
+                   )}
                 </Box>
               </AppHeader>
               <Box flex overflow="auto" gap="medium" pad="medium">
