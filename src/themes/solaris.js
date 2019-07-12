@@ -1,6 +1,4 @@
-import { grommet } from "grommet";
-
-export const solarisTheme = {
+export const solaris = {
   global: {
     colors: {
       brand: '#FFFFFF',

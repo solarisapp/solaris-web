@@ -1,7 +1,7 @@
 import { grommet } from "grommet";
 import { deepMerge } from "grommet/utils";
 
-export const defaultTheme = deepMerge(grommet, {
+export const theme = deepMerge(grommet, {
   global: {
     colors: {
       active: "dark-5",

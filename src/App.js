@@ -17,8 +17,8 @@ import {
 } from 'grommet';
 import { Down, FormClose, Notification, FormSearch, Trigger } from 'grommet-icons';
 
-import { defaultTheme } from "./themes/defaultTheme";
-import { solarisTheme } from "./themes/solarisTheme";
+import { theme } from "./themes/theme";
+import { solaris } from "./themes/solaris";
 
 import AppHeader from "./components/AppHeader";
 import Hardware from "./components/Hardware";
@@ -58,7 +58,7 @@ const App = ({ open }) => {
 
   return (
     <Router>
-      <Grommet theme={solarisTheme} full>
+      <Grommet theme={solaris} full>
         <ResponsiveContext.Consumer>
           {size => (
             <Box fill background='light-3'>
