@@ -28,6 +28,7 @@ import ReceivablesChart from "./components/ReceivablesChart";
 import VirtualMachinesCard from "./components/VirtualMachinesCard";
 import { UserMenu } from "./components/UserMenu";
 import RoutedButton from "./components/RoutedButton";
+import RoutedButtonAsIcon from "./components/RoutedButtonAsIcon";
 
 import { hardware, utilization, vms, notification } from "./data";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -69,7 +70,7 @@ const App = ({ open }) => {
             <Box fill background='light-3'>
               <AppHeader>
                 <Box direction='row' align='center'>
-                  <RoutedButton
+                  <RoutedButtonAsIcon
                     icon={
                       <Trigger
                         color='red'
