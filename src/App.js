@@ -33,6 +33,10 @@ import { hardware, utilization, vms, notification } from "./data";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Users } from "./pages";
 
+import { AnimatedLogo1 } from "./components/AnimatedLogo1";
+import { AnimatedLogo2 } from "./components/AnimatedLogo2";
+import "./styles.css";
+
 const App = ({ open }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
@@ -192,6 +196,8 @@ const App = ({ open }) => {
                   </Box>
                   <Box flex="grow" margin="medium">
                     <ReceivablesChart />
+                    <AnimatedLogo1 />
+                    <AnimatedLogo2 />
                   </Box>
                   {(!showSidebar || size !== 'small') ? (
                     <Collapsible direction='horizontal' open={showSidebar}>

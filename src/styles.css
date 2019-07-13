@@ -1,0 +1,50 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+  background: linear-gradient(180deg, #05f, #09f);
+}
+
+.container1 {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+}
+
+.item1 {
+  width: 56%;
+  overflow: visible;
+  stroke: rgb(255, 64, 0);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.container2 {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+  background: rgba(255, 64, 0, 1);
+  border-radius: 30px;
+}
+
+.item2 {
+  width: 56%;
+  overflow: visible;
+  stroke: rgb(247, 8, 8);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
