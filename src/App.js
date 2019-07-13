@@ -69,7 +69,14 @@ const App = ({ open }) => {
             <Box fill background='light-3'>
               <AppHeader>
                 <Box direction='row' align='center'>
-                  <Trigger color='red' size='large'/>
+                  <RoutedButton
+                    icon={
+                      <Trigger
+                        color='red'
+                        size='large'
+                      />}
+                    path='/'
+                  />
                   <Box>
                     <RoutedButton
                       label="Dashboard"
