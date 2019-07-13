@@ -27,6 +27,7 @@ import UtilizationCard from "./components/UtilizationCard";
 import ReceivablesChart from "./components/ReceivablesChart";
 import VirtualMachinesCard from "./components/VirtualMachinesCard";
 import { UserMenu } from "./components/UserMenu";
+import RoutedButton from "./components/RoutedButton";
 
 import { hardware, utilization, vms, notification } from "./data";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -66,9 +67,9 @@ const App = ({ open }) => {
                 <Box direction='row' align='center'>
                   <Trigger color='red' size='large'/>
                   <Box>
-                    <Button
+                    <RoutedButton
                       label="Dashboard"
-                      href="/"
+                      path="/"
                     />
                   </Box>
                   <Box>
@@ -109,10 +110,10 @@ const App = ({ open }) => {
                   </DropButton>
                   </Box>
                   <Box>
-                    <Button
-                      label='Users'
-                      href='/users'
-                      />
+                    <RoutedButton
+                      label="Users"
+                      path="/users"
+                    />
                   </Box>
                   <Box>
                     <Menu
